@@ -50,7 +50,7 @@ app.post("/post", async(req,res) => {
 });
 
 // Define a route to fetch car information
-app.get("/fetchCars", async (req, res) => {
+app.get("https://crazycars.vercel.app/fetchCars", async (req, res) => {
   try {
     const carInfo = await CarDetail.find(); // Assuming User is your Mongoose model
     res.json(carInfo); // Send the car information as JSON response
