@@ -31,7 +31,7 @@ mongoose
 // Parse incoming JSON data
 app.use(express.json());
 
-require("../backend/models/car")
+require("./models/car")
 const CarDetail = mongoose.model("CarInfo");
 app.post("/post", async(req,res) => {
     const {userid,companyname,modelname,year,amount} = req.body;

@@ -7,7 +7,7 @@ const router = express.Router();
 
 const JWT_SECRET = 'hjbsdjfsbdjvbsdjh[wef]wef[asdfvnsd[ovjea]faesnfas';
 
-require('../models/user');
+require('./models/user');
 const User = mongoose.model('UserDetail');
 // SignUp route
 
