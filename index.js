@@ -9,7 +9,7 @@ const local_url = 'http://localhost:3000';
 const app = express();
 
 const corsOptions = {
-  origin: [f_url,local_url],
+  origin: '*',
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // enable set cookie
   optionsSuccessStatus: 204,
