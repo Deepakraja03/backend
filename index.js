@@ -2,8 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require('dotenv').config();
-const db = process.env.DBURL;
-const f_url = process.env.FRONTURL;
+const db = 'mongodb+srv://Deepakraja:Barryallen03@cluster0.3atagu3.mongodb.net/Cars';
 
 const app = express();
 
