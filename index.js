@@ -6,15 +6,16 @@ const db = 'mongodb+srv://Deepakraja:Barryallen03@cluster0.3atagu3.mongodb.net/C
 
 const app = express();
 
-const corsOptions = {
-  origin: 'https://crazycars.vercel.app',
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true, // enable set cookie
-  optionsSuccessStatus: 204,
-};
+// const corsOptions = {
+//   origin: 'https://crazycars.vercel.app',
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   credentials: true, // enable set cookie
+//   optionsSuccessStatus: 204,
+// };
 
 // Allow requests from the specified frontend origin
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 const dbURI = db;
 mongoose
   .connect(dbURI, {
@@ -30,6 +31,9 @@ mongoose
 
 // Parse incoming JSON data
 app.use(express.json());
+
+app.use('/', (req, res) = {
+}).res.send("Server running successfully");
 
 require("./models/car")
 const CarDetail = mongoose.model("CarInfo");
@@ -50,7 +54,7 @@ app.post("/post", async(req,res) => {
 });
 
 // Define a route to fetch car information
-app.get("https://crazycars.vercel.app/fetchCars", async (req, res) => {
+app.get("/fetchCars", async (req, res) => {
   try {
     const carInfo = await CarDetail.find(); // Assuming User is your Mongoose model
     res.json(carInfo); // Send the car information as JSON response
