@@ -3,11 +3,12 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require('dotenv').config();
 const db = process.env.DBURL;
+const f_url = process.env.FRONTURL;
 
 const app = express();
 
 const corsOptions = {
-  origin: "https://crazycars.vercel.app/",
+  origin: f_url,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // enable set cookie
   optionsSuccessStatus: 204,
