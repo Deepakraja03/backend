@@ -8,7 +8,7 @@ const f_url = process.env.FRONTURL;
 const app = express();
 
 const corsOptions = {
-  origin: f_url,
+  origin: 'https://crazycars.vercel.app',
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // enable set cookie
   optionsSuccessStatus: 204,
