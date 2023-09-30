@@ -32,8 +32,10 @@ mongoose
 // Parse incoming JSON data
 app.use(express.json());
 
-app.use('/', (req, res) = {
-}).res.send("Server running successfully");
+// app.use('/', (req, res) => {
+//   res.send("Server running successfully");
+// });
+
 
 require("./models/car")
 const CarDetail = mongoose.model("CarInfo");
