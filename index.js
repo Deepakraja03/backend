@@ -6,16 +6,15 @@ const db = 'mongodb+srv://Deepakraja:Barryallen03@cluster0.3atagu3.mongodb.net/C
 
 const app = express();
 
-// const corsOptions = {
-//   origin: 'https://crazycars.vercel.app',
-//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//   credentials: true, // enable set cookie
-//   optionsSuccessStatus: 204,
-// };
+const corsOptions = {
+  origin: 'https://crazycars.vercel.app',
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // enable set cookie
+  optionsSuccessStatus: 204,
+};
 
 // Allow requests from the specified frontend origin
-// app.use(cors(corsOptions));
-app.use(cors());
+app.use(cors(corsOptions));
 const dbURI = db;
 mongoose
   .connect(dbURI, {
