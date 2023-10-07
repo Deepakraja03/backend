@@ -7,7 +7,7 @@ const db = 'mongodb+srv://Deepakraja:Barryallen03@cluster0.3atagu3.mongodb.net/C
 const app = express();
 
 const corsOptions = {
-  origin: 'https://crazycars.vercel.app',
+  origin: ['https://crazycars.vercel.app'],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // enable set cookie
   optionsSuccessStatus: 204,
@@ -85,7 +85,28 @@ app.get('/userCars/:userid', async (req, res) => {
 
 const authRoutes = require("./routes/auth");
 app.use('/auth', authRoutes);
+// const User = require('./models/user')
+// app.patch('/profileUpdate/:userid', async (req, res) => {
+//   const userId = req.params.userid;
 
+//   try {
+//     if (!mongoose.Types.ObjectId.isValid(userId)) {
+//       return res.status(400).json({ message: 'Invalid user ID' });
+//     }
+//     const profileUpdate = await User.findByIdAndUpdate(userId, req.body, {
+//       new: true,
+//     });
+
+//     if (!profileUpdate) {
+//       return res.status(404).json({ message: 'User not found' });
+//     }
+
+//     res.json(profileUpdate);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ message: 'Server error' });
+//   }
+// });
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
